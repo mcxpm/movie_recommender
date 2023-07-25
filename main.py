@@ -4,10 +4,11 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 import pandas as pd
 import numpy as np
 import pickle
+from create_similarity import SIMILARITY
 
 TOKEN: Final = "6389620358:AAGOPTlX2-IHfK8SxNdNDq3_Ulac3mewdbg"
 BOT_USERNAME: Final = '@movie_botrec'
-SIMILARITY = pickle.load(open("similarity.pkl", "rb"))
+# SIMILARITY = pickle.load(open("similarity.pkl", "rb")), similarity.pkl was too big, created it in create_similarity.py and imported it instead
 MOVIE_DICT = pickle.load(open("movie_dict.pkl", "rb"))
 MOVIES = pd.DataFrame(MOVIE_DICT)
 
